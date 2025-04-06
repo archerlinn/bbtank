@@ -1,0 +1,287 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  color: white;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  padding: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #3a3f4b;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #2c303a;
+  color: white;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: #ff4444;
+  margin-bottom: 15px;
+}
+
+.home-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.game-modes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.game-mode-card {
+  background-color: #3a3f4b;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 45%;
+}
+
+.game-mode-card:hover {
+  transform: scale(1.05);
+}
+
+.game-mode-card h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.game-mode-card ul {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+.game-mode-card li {
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.game-mode-card li:before {
+  content: "•";
+  color: #4CAF50;
+  position: absolute;
+  left: 0;
+}
+
+.chapters-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.chapters-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.chapter-card {
+  background-color: #3a3f4b;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.chapter-card:hover {
+  transform: scale(1.05);
+}
+
+.chapter-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.locked-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.difficulty {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.difficulty[data-difficulty="Easy"] {
+  background-color: #4CAF50;
+}
+
+.difficulty[data-difficulty="Medium"] {
+  background-color: #FFC107;
+}
+
+.difficulty[data-difficulty="Hard"] {
+  background-color: #F44336;
+}
+
+.completed-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.tank-selection {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.tank-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.tank-option {
+  background-color: #3a3f4b;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 30%;
+}
+
+.tank-option.selected {
+  border: 2px solid #4CAF50;
+}
+
+.tank-option:hover {
+  transform: scale(1.05);
+}
+
+.tank-option h3 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+canvas {
+  background-color: #1a1a1a;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: block;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 100;
+}
+
+.game-over h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
+}
+
+.game-over p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.game-over button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.game-over button:hover {
+  background: #45a049;
+}
